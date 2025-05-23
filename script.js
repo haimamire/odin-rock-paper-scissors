@@ -37,7 +37,7 @@ function playGame() {
     let computerScore = 0;
     let winner;
 
-    for (let i = 0; i < 5; i++) {
+    while (humanScore < 5 && computerScore < 5) {
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
 
