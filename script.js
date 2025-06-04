@@ -1,3 +1,9 @@
+
+const resultsDiv = document.querySelector("#results");
+const roundWinnerMsg = document.createElement("p");
+const winnerMsg = document.createElement("p");
+
+
 function getComputerChoice() {
     let computerChoice;
     switch (Math.floor(Math.random() * 3)) {
@@ -37,31 +43,36 @@ function playGame() {
     let computerScore = 0;
     let winner;
 
-    while (humanScore < 5 && computerScore < 5) {
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
+    // while (humanScore < 5 && computerScore < 5) {
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
 
-        let roundWinner = playRound(humanChoice, computerChoice);
-        switch (roundWinner) {
-            case "computer":
-                computerScore++;
-                console.log("Computer wins this round.");
-                break;
-            case "human":
-                humanScore++;
-                console.log("Human wins this round.");
-                break;
-            default:
-                console.log("It's a tie!");
-                break;
-        }
+    let roundWinner = playRound(humanChoice, computerChoice);
+    switch (roundWinner) {
+        case "computer":
+            computerScore++;
+            console.log("Computer wins this round.");
+            break;
+        case "human":
+            humanScore++;
+            roundWinnerMsg.textContent = "Human wins this round.";
+            console.log("Human wins this round.");
+            break;
+        default:
+            console.log("It's a tie!");
+            break;
     }
-    console.log(
-        `Human score -> ${humanScore} Computer score -> ${computerScore}`
-    );
+    resultsDiv.prepend(roundWinnerMsg);
+
+    // }
+    // console.log(
+    //     `Human score -> ${humanScore} Computer score -> ${computerScore}`
+    // );
 
     winner = humanScore > computerScore ? "Human" : "Computer";
-    console.log(`${winner} is the new World Champion!! The absolute GOAT!`);
+    winnerMsg.textContent = `${winner} is the new World Champion!! The absolute GOAT!`;
+
+    resultsDiv.appendChild(winnerMsg);
 }
 
 playGame();
