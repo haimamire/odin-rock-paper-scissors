@@ -1,10 +1,13 @@
 const selectButtons = document.querySelectorAll("#select-buttons");
 const resultsDiv = document.querySelector("#results");
+
 const humanScoreSpan = document.querySelector("#human-score");
 const computerScoreSpan = document.querySelector("#computer-score");
 
 const roundWinnerMsg = document.createElement("p");
 const winnerMsg = document.createElement("p");
+const replayButton = document.createElement("button");
+replayButton.textContent = "Replay";
 
 function getComputerChoice() {
     let computerChoice;
@@ -39,6 +42,7 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
+    // Once clicked, user selection buttons are the ones that trigger every round played.
     selectButtons.forEach((button) => {
         button.addEventListener(
             "click",
@@ -70,10 +74,28 @@ function playGame() {
                     winnerMsg.textContent = `${winner} is the new World Champion! The absolute GOAT!`;
 
                     resultsDiv.appendChild(winnerMsg);
+                    resultsDiv.appendChild(replayButton);
                 }
             }
         )
     });
+
+    // The replay button is shown and can be used only after one full game is played.
+    replayButton.addEventListener(
+        "click",
+        () => {
+            humanScore = 0;
+            computerScore = 0;
+            cleanResults();
+        }
+    );
+}
+
+function cleanResults() {
+    computerScoreSpan.textContent = 0;
+    humanScoreSpan.textContent = 0;
+    resultsDiv.removeChild(roundWinnerMsg);
+    resultsDiv.removeChild(winnerMsg);
 }
 
 playGame();
