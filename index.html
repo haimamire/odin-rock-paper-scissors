@@ -5,17 +5,25 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Rock, paper, scissors</h1>
-    <h2>Choose!</h2>
-    <div id="select-buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    <div class="header-container">
+        <h1>Rock, paper, scissors</h1>
     </div>
-    <h2>Score:</h2>
-    <div id="results">
-        <p>Human score: <span id="human-score">0</span></p>
-        <p>Computer score: <span id="computer-score">0</span></p>
+    <div class="game-container">
+        <div class="selection-container">
+            <h2>Choose!</h2>
+            <div id="select-buttons">
+                <button id="rock">Rock</button>
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissors</button>
+            </div>
+        </div>
+        <div class="results-container">
+            <h2>Results:</h2>
+            <div id="results">
+                <p>Human score: <span id="human-score">0</span></p>
+                <p>Computer score: <span id="computer-score">0</span></p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
