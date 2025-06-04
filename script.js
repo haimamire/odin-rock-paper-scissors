@@ -1,5 +1,8 @@
 
+
 const resultsDiv = document.querySelector("#results");
+const humanScoreSpan = document.querySelector("#human-score");
+const computerScoreSpan = document.querySelector("#computer-score");
 const roundWinnerMsg = document.createElement("p");
 const winnerMsg = document.createElement("p");
 
@@ -51,23 +54,20 @@ function playGame() {
     switch (roundWinner) {
         case "computer":
             computerScore++;
-            console.log("Computer wins this round.");
+            computerScoreSpan.textContent = computerScore;
+            roundWinnerMsg.textContent = "Computer wins this round.";
             break;
         case "human":
             humanScore++;
+            humanScoreSpan.textContent = humanScore;
             roundWinnerMsg.textContent = "Human wins this round.";
-            console.log("Human wins this round.");
             break;
         default:
             console.log("It's a tie!");
             break;
     }
     resultsDiv.prepend(roundWinnerMsg);
-
     // }
-    // console.log(
-    //     `Human score -> ${humanScore} Computer score -> ${computerScore}`
-    // );
 
     winner = humanScore > computerScore ? "Human" : "Computer";
     winnerMsg.textContent = `${winner} is the new World Champion!! The absolute GOAT!`;
