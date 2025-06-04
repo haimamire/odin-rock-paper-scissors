@@ -2,28 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="header-container">
-        <h1>Rock, paper, scissors</h1>
-    </div>
-    <div class="game-container">
-        <div class="selection-container">
-            <h2>Choose!</h2>
-            <div id="select-buttons">
-                <button id="rock">Rock</button>
-                <button id="paper">Paper</button>
-                <button id="scissors">Scissors</button>
+    <div class="content">
+        <div class="header-container">
+            <h1>Rock Paper Scissors</h1>
+        </div>
+        <div class="game-container">
+            <div class="selection-container">
+                <h2>Choose!</h2>
+                <div id="select-buttons">
+                    <button id="rock">Rock</button>
+                    <button id="paper">Paper</button>
+                    <button id="scissors">Scissors</button>
+                </div>
+            </div>
+            <div class="results-container">
+                <h2>Results:</h2>
+                <div id="results">
+                    <p>Human score: <span id="human-score">0</span></p>
+                    <p>Computer score: <span id="computer-score">0</span></p>
+                </div>
             </div>
         </div>
-        <div class="results-container">
-            <h2>Results:</h2>
-            <div id="results">
-                <p>Human score: <span id="human-score">0</span></p>
-                <p>Computer score: <span id="computer-score">0</span></p>
-            </div>
-        </div>
     </div>
+    <div class="footer">© 2025 haimamire. All rights reserved.</div>
 </body>
 </html>

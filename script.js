@@ -72,6 +72,8 @@ function playGame() {
                 if (humanScore === 5 || computerScore === 5) {
                     let winner = humanScore > computerScore ? "Human" : "Computer";
                     winnerMsg.textContent = `${winner} is the new World Champion! The absolute GOAT!`;
+                    winnerMsg.style.fontStyle = "italic";
+                    winnerMsg.style.fontWeight = "bold";
 
                     resultsDiv.appendChild(winnerMsg);
                     resultsDiv.appendChild(replayButton);
